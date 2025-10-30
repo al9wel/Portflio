@@ -1,4 +1,4 @@
-import React from 'react'
+"use client"
 import HeroText from '../components/HeroText'
 import { motion } from 'motion/react'
 import { ArrowBigRight } from 'lucide-react'
@@ -12,7 +12,7 @@ const Hero = () => {
                 <HeroText />
             </motion.div>
             <div className="flex mt-2 justify-center items-center flex-col md:flex-row-reverse gap-3">
-                <p className="md:hidden uppercase text-color1 tracking-[8px] sm:tracking-[20px]">based in yemen</p>
+                <p className="md:hidden uppercase text-color1 tracking-[8px] sm:tracking-[20px]">based in <span className='text-color3/70 font-extrabold'>yemen</span></p>
                 <div className="hidden self-start md:flex flex-col gap-4">
                     <motion.p
                         initial={{

@@ -1,3 +1,4 @@
+"use client"
 import { motion } from "motion/react"
 // { handleColor }: { handleColor: ({ }) => void }
 const About = () => {
