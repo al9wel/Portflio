@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+    --color-color1: #e9e7d1;
+    --color-color2: #d7bd78;
+    --color-color3: #eb3e64;
+    --color-color4: #6fcec6;
+    --color-color5: #f3d20b;
+    --color-color6: #f57f04;
+    --color-color7: #a5dc74;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(4, 4, 3);
+}
