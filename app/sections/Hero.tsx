@@ -7,12 +7,38 @@ import hero from "../assets/images/herojpg.jpg"
 // { handleColor }: { handleColor: ({ }) => void }
 const Hero = () => {
     return (
-        <motion.section id='home' className='min-h-screen'>
-            <motion.div>
-                <HeroText />
-            </motion.div>
+        <motion.section id='home' className='mb-30'>
+            <HeroText />
             <div className="flex mt-2 justify-center items-center flex-col md:flex-row-reverse gap-3">
-                <p className="md:hidden uppercase text-color1 tracking-[8px] sm:tracking-[20px]">based in <span className='text-color3/70 font-extrabold'>yemen</span></p>
+                <motion.p
+                    initial={{
+                        opacity: 0
+                    }}
+                    animate={{
+                        opacity: 1
+                    }}
+                    transition={{ delay: 0.7, duration: 1, ease: [0.23, 1, 0.32, 1], }}
+                    className="md:hidden uppercase text-color1 tracking-[8px] sm:tracking-[20px]">
+                    based
+                    <motion.span
+                        initial={{
+                            opacity: 0
+                        }}
+                        animate={{
+                            opacity: 1
+                        }}
+                        transition={{ delay: 0.9, duration: 1, ease: [0.23, 1, 0.32, 1], }}
+                    >{" "}in</motion.span>
+                    <motion.span
+                        initial={{
+                            opacity: 0
+                        }}
+                        animate={{
+                            opacity: 1
+                        }}
+                        transition={{ delay: 1.1, duration: 1, ease: [0.23, 1, 0.32, 1], }}
+                        className='text-color3/70 font-extrabold'>{" "}yemen</motion.span>
+                </motion.p>
                 <div className="hidden self-start md:flex flex-col gap-4">
                     <motion.p
                         initial={{
