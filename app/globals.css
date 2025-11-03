@@ -47,6 +47,18 @@ body {
     user-select: none;
 }
 
+
+.socials:hover p {
+    color: #f57f04;
+    transition-duration: 300ms;
+}
+
+.socials:hover div {
+    background-color: #000;
+    color: #f57f04;
+    transition-duration: 300ms;
+}
+
 .noise {
     position: absolute;
     inset: 0;
