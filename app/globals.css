@@ -8,6 +8,7 @@
     --color-color5: #f3d20b;
     --color-color6: #f57f04;
     --color-color7: #a5dc74;
+    --color-color8: #c2c4af;
 }
 
 * {
@@ -44,6 +45,19 @@ body {
     animation: noise 8s steps(10) infinite;
     pointer-events: none;
     user-select: none;
+}
+
+.noise {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0ibm9pc2UiPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbCIgbnVtT2N0YXZlcz0iMTAwIiBiYXNlRnJlcXVlbmN5PSIwLjgiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IndoaXRlIiBmaWx0ZXI9InVybCgjbm9pc2UpIi8+PC9zdmc+"); */
+    background-image: url('http://momentsingraphics.de/Media/BlueNoise/WhiteNoiseDithering.png');
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    mix-blend-mode: overlay;
+    /* animation: noise 1s steps(8, end) infinite; */
+    z-index: 1;
 }
 
 @keyframes noise {
