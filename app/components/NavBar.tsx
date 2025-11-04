@@ -34,7 +34,7 @@ const NavBar = () => {
                 <div className="md:hidden flex justify-center items-center gap-6">
                     {navItems.map((item) => {
                         return (
-                            <a key={item.name} href={item.url} className="hover:text-color2 duration-300 text-color1/70 hover:scale-103 hover:translate-y-[-3px] border-b-3 border-color4/50 hover:border-color2/70 rounded-full p-2">{item.icon}</a>
+                            <a key={item.name} href={item.url} className="hover:text-color2 duration-300 text-color1/70 hover:scale-103 hover:translate-y-[-3px] border-b-3 border-color1/30 hover:border-color2/70 rounded-full p-2">{item.icon}</a>
                         )
                     })}
                 </div>

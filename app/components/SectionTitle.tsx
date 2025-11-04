@@ -6,9 +6,10 @@ const BBH = BBH_Sans_Bartle({
     weight: ["400"],
 });
 const SectionTitle = ({ title }: { title: string }) => {
+
     return (
         <>
-            <div className="w-full p-2  mb-2 mt-12 flex justify-between items-center text-3xl sm:text-5xl md:text-7xl lg:text-[90px] xl:text-9xl text-center text-color1">
+            <div className="w-full p-2  mb-2 mt-12 flex justify-between items-center text-3xl sm:text-5xl md:text-[60px] lg:text-[85px] xl:text-[120px] text-center text-color1">
                 <div className="hidden md:flex gap-2 justify-center items-center flex-col">
                     <SunDim className="size-5 sm:size-6 md:size-7 lg:size-8 xl:size-9" />
                     <motion.div
