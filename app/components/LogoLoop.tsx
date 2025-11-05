@@ -1,16 +1,55 @@
-import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
-import Image from "next/image";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+
+export type LogoItem =
+    | {
+        node: React.ReactNode;
+        href?: string;
+        title?: string;
+        ariaLabel?: string;
+    }
+    | {
+        src: string;
+        alt?: string;
+        href?: string;
+        title?: string;
+        srcSet?: string;
+        sizes?: string;
+        width?: number;
+        height?: number;
+    };
+
+export interface LogoLoopProps {
+    logos: LogoItem[];
+    speed?: number;
+    direction?: 'left' | 'right';
+    width?: number | string;
+    logoHeight?: number;
+    gap?: number;
+    pauseOnHover?: boolean;
+    fadeOut?: boolean;
+    fadeOutColor?: string;
+    scaleOnHover?: boolean;
+    ariaLabel?: string;
+    className?: string;
+    style?: React.CSSProperties;
+}
+
 const ANIMATION_CONFIG = {
     SMOOTH_TAU: 0.25,
     MIN_COPIES: 2,
     COPY_HEADROOM: 2
-};
+} as const;
 
-const toCssLength = value => (typeof value === 'number' ? `${value}px` : (value ?? undefined));
+const toCssLength = (value?: number | string): string | undefined =>
+    typeof value === 'number' ? `${value}px` : (value ?? undefined);
 
-const cx = (...parts) => parts.filter(Boolean).join(' ');
+const cx = (...parts: Array<string | false | null | undefined>) => parts.filter(Boolean).join(' ');
 
-const useResizeObserver = (callback, elements, dependencies) => {
+const useResizeObserver = (
+    callback: () => void,
+    elements: Array<React.RefObject<Element | null>>,
+    dependencies: React.DependencyList
+) => {
     useEffect(() => {
         if (!window.ResizeObserver) {
             const handleResize = () => callback();
@@ -31,11 +70,14 @@ const useResizeObserver = (callback, elements, dependencies) => {
         return () => {
             observers.forEach(observer => observer?.disconnect());
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, dependencies);
 };
 
-const useImageLoader = (seqRef, onLoad, dependencies) => {
+const useImageLoader = (
+    seqRef: React.RefObject<HTMLUListElement | null>,
+    onLoad: () => void,
+    dependencies: React.DependencyList
+) => {
     useEffect(() => {
         const images = seqRef.current?.querySelectorAll('img') ?? [];
 
@@ -53,7 +95,7 @@ const useImageLoader = (seqRef, onLoad, dependencies) => {
         };
 
         images.forEach(img => {
-            const htmlImg = img;
+            const htmlImg = img as HTMLImageElement;
             if (htmlImg.complete) {
                 handleImageLoad();
             } else {
@@ -68,13 +110,18 @@ const useImageLoader = (seqRef, onLoad, dependencies) => {
                 img.removeEventListener('error', handleImageLoad);
             });
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, dependencies);
 };
 
-const useAnimationLoop = (trackRef, targetVelocity, seqWidth, isHovered, pauseOnHover) => {
-    const rafRef = useRef(null);
-    const lastTimestampRef = useRef(null);
+const useAnimationLoop = (
+    trackRef: React.RefObject<HTMLDivElement | null>,
+    targetVelocity: number,
+    seqWidth: number,
+    isHovered: boolean,
+    pauseOnHover: boolean
+) => {
+    const rafRef = useRef<number | null>(null);
+    const lastTimestampRef = useRef<number | null>(null);
     const offsetRef = useRef(0);
     const velocityRef = useRef(0);
 
@@ -99,7 +146,7 @@ const useAnimationLoop = (trackRef, targetVelocity, seqWidth, isHovered, pauseOn
             };
         }
 
-        const animate = timestamp => {
+        const animate = (timestamp: number) => {
             if (lastTimestampRef.current === null) {
                 lastTimestampRef.current = timestamp;
             }
@@ -133,10 +180,10 @@ const useAnimationLoop = (trackRef, targetVelocity, seqWidth, isHovered, pauseOn
             }
             lastTimestampRef.current = null;
         };
-    }, [targetVelocity, seqWidth, isHovered, pauseOnHover, trackRef]);
+    }, [targetVelocity, seqWidth, isHovered, pauseOnHover]);
 };
 
-export const LogoLoop = memo(
+export const LogoLoop = React.memo<LogoLoopProps>(
     ({
         logos,
         speed = 120,
@@ -152,13 +199,13 @@ export const LogoLoop = memo(
         className,
         style
     }) => {
-        const containerRef = useRef(null);
-        const trackRef = useRef(null);
-        const seqRef = useRef(null);
+        const containerRef = useRef<HTMLDivElement>(null);
+        const trackRef = useRef<HTMLDivElement>(null);
+        const seqRef = useRef<HTMLUListElement>(null);
 
-        const [seqWidth, setSeqWidth] = useState(0);
-        const [copyCount, setCopyCount] = useState(ANIMATION_CONFIG.MIN_COPIES);
-        const [isHovered, setIsHovered] = useState(false);
+        const [seqWidth, setSeqWidth] = useState<number>(0);
+        const [copyCount, setCopyCount] = useState<number>(ANIMATION_CONFIG.MIN_COPIES);
+        const [isHovered, setIsHovered] = useState<boolean>(false);
 
         const targetVelocity = useMemo(() => {
             const magnitude = Math.abs(speed);
@@ -185,11 +232,12 @@ export const LogoLoop = memo(
         useAnimationLoop(trackRef, targetVelocity, seqWidth, isHovered, pauseOnHover);
 
         const cssVariables = useMemo(
-            () => ({
-                '--logoloop-gap': `${gap}px`,
-                '--logoloop-logoHeight': `${logoHeight}px`,
-                ...(fadeOutColor && { '--logoloop-fadeColor': fadeOutColor })
-            }),
+            () =>
+                ({
+                    '--logoloop-gap': `${gap}px`,
+                    '--logoloop-logoHeight': `${logoHeight}px`,
+                    ...(fadeOutColor && { '--logoloop-fadeColor': fadeOutColor })
+                }) as React.CSSProperties,
             [gap, logoHeight, fadeOutColor]
         );
 
@@ -216,7 +264,7 @@ export const LogoLoop = memo(
         }, [pauseOnHover]);
 
         const renderLogoItem = useCallback(
-            (item, key) => {
+            (item: LogoItem, key: React.Key) => {
                 const isNodeItem = 'node' in item;
 
                 const content = isNodeItem ? (
@@ -227,12 +275,12 @@ export const LogoLoop = memo(
                             scaleOnHover &&
                             'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
                         )}
-                        aria-hidden={!!item.href && !item.ariaLabel}
+                        aria-hidden={!!(item as any).href && !(item as any).ariaLabel}
                     >
-                        {item.node}
+                        {(item as any).node}
                     </span>
                 ) : (
-                    <Image
+                    <img
                         className={cx(
                             'h-[var(--logoloop-logoHeight)] w-auto block object-contain',
                             '[-webkit-user-drag:none] pointer-events-none',
@@ -241,22 +289,24 @@ export const LogoLoop = memo(
                             scaleOnHover &&
                             'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
                         )}
-                        src={item.src}
-                        srcSet={item.srcSet}
-                        sizes={item.sizes}
-                        width={item.width}
-                        height={item.height}
-                        alt={item.alt ?? ''}
-                        title={item.title}
+                        src={(item as any).src}
+                        srcSet={(item as any).srcSet}
+                        sizes={(item as any).sizes}
+                        width={(item as any).width}
+                        height={(item as any).height}
+                        alt={(item as any).alt ?? ''}
+                        title={(item as any).title}
                         loading="lazy"
                         decoding="async"
                         draggable={false}
                     />
                 );
 
-                const itemAriaLabel = isNodeItem ? (item.ariaLabel ?? item.title) : (item.alt ?? item.title);
+                const itemAriaLabel = isNodeItem
+                    ? ((item as any).ariaLabel ?? (item as any).title)
+                    : ((item as any).alt ?? (item as any).title);
 
-                const inner = item.href ? (
+                const inner = (item as any).href ? (
                     <a
                         className={cx(
                             'inline-flex items-center no-underline rounded',
@@ -264,7 +314,7 @@ export const LogoLoop = memo(
                             'hover:opacity-80',
                             'focus-visible:outline focus-visible:outline-current focus-visible:outline-offset-2'
                         )}
-                        href={item.href}
+                        href={(item as any).href}
                         aria-label={itemAriaLabel || 'logo link'}
                         target="_blank"
                         rel="noreferrer noopener"
@@ -308,7 +358,7 @@ export const LogoLoop = memo(
         );
 
         const containerStyle = useMemo(
-            () => ({
+            (): React.CSSProperties => ({
                 width: toCssLength(width) ?? '100%',
                 ...cssVariables,
                 ...style

@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/components/LogoLoop.jsx", "app/components/LogoLoop.jsx", "app/page.jsx", "app/components/AboutContent.jsx"  ],
+, "app/components/LogoLoop.tsx", "app/components/LogoLoop.tsx", "app/page.jsx", "app/components/AboutContent.tsx"  ],
   "exclude": ["node_modules"]
 }

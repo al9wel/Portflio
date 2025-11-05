@@ -18,24 +18,24 @@ const techLogos = [
     { node: <SiLaravel color="#2d2d29" />, title: "Express", href: "https://laravel.com" },
     { node: <SiFlutter color="#2d2d29" />, title: "Express", href: "https://flutter.dev" },
 ];
-// interface ComponentProps {
-//     animationValues: {
-//         initial1: { opacity: number, x?: number },
-//         whileInView1: { opacity: number, x?: number },
-//         initial2: { opacity: number, x?: number },
-//         whileInView2: { opacity: number, x?: number },
-//         initial3: { opacity: number, x?: number },
-//         whileInView3: { opacity: number, x: number },
-//         initial4: { opacity: number, x?: number },
-//         whileInView4: { opacity: number, x?: number },
-//         initial5: { opacity: number, x?: number },
-//         whileInView5: { opacity: number, x?: number },
-//         initial6: { opacity: number, x?: number },
-//         whileInView6: { opacity: number, x?: number },
-//     }
+interface ComponentProps {
+    animationValues: {
+        initial1: { opacity: number, x?: number },
+        whileInView1: { opacity: number, x?: number },
+        initial2: { opacity: number, x?: number },
+        whileInView2: { opacity: number, x?: number },
+        initial3: { opacity: number, x?: number },
+        whileInView3: { opacity: number, x: number },
+        initial4: { opacity: number, x?: number },
+        whileInView4: { opacity: number, x?: number },
+        initial5: { opacity: number, x?: number },
+        whileInView5: { opacity: number, x?: number },
+        initial6: { opacity: number, x?: number },
+        whileInView6: { opacity: number, x?: number },
+    }
 
-// }
-const AboutContent = ({ animationValues }) => {
+}
+const AboutContent = ({ animationValues }: ComponentProps) => {
     const animation = animationValues;
     return (
         <>
