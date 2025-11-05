@@ -1,10 +1,10 @@
-import { Github, Linkedin, Mail, Phone, Star, } from "lucide-react";
+import { Star } from "lucide-react";
 import { motion } from "motion/react"
 import { Oswald } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import al9wel from "../assets/images/al9wel.jpeg"
-import { SiExpress, SiFlutter, SiGit, SiGithub, SiGmail, SiJavascript, SiLaravel, SiLinkedin, SiMongodb, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiSharp, SiTailwindcss, SiTypescript, SiWhatsapp, } from "react-icons/si";
+import { SiExpress, SiFlutter, SiGit, SiGithub, SiGmail, SiJavascript, SiLaravel, SiLinkedin, SiMongodb, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiTypescript, SiWhatsapp, } from "react-icons/si";
 import LogoLoop from "./LogoLoop"
 const oswald = Oswald({
     weight: ["400"],
@@ -18,24 +18,24 @@ const techLogos = [
     { node: <SiLaravel color="#2d2d29" />, title: "Express", href: "https://laravel.com" },
     { node: <SiFlutter color="#2d2d29" />, title: "Express", href: "https://flutter.dev" },
 ];
-interface ComponentProps {
-    animationValues: {
-        initial1: { opacity: number, x?: number },
-        whileInView1: { opacity: number, x?: number },
-        initial2: { opacity: number, x?: number },
-        whileInView2: { opacity: number, x?: number },
-        initial3: { opacity: number, x?: number },
-        whileInView3: { opacity: number, x: number },
-        initial4: { opacity: number, x?: number },
-        whileInView4: { opacity: number, x?: number },
-        initial5: { opacity: number, x?: number },
-        whileInView5: { opacity: number, x?: number },
-        initial6: { opacity: number, x?: number },
-        whileInView6: { opacity: number, x?: number },
-    }
+// interface ComponentProps {
+//     animationValues: {
+//         initial1: { opacity: number, x?: number },
+//         whileInView1: { opacity: number, x?: number },
+//         initial2: { opacity: number, x?: number },
+//         whileInView2: { opacity: number, x?: number },
+//         initial3: { opacity: number, x?: number },
+//         whileInView3: { opacity: number, x: number },
+//         initial4: { opacity: number, x?: number },
+//         whileInView4: { opacity: number, x?: number },
+//         initial5: { opacity: number, x?: number },
+//         whileInView5: { opacity: number, x?: number },
+//         initial6: { opacity: number, x?: number },
+//         whileInView6: { opacity: number, x?: number },
+//     }
 
-}
-const AboutContent = ({ animationValues }: ComponentProps) => {
+// }
+const AboutContent = ({ animationValues }) => {
     const animation = animationValues;
     return (
         <>
