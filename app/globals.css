@@ -38,7 +38,7 @@ body {
     left: -50%;
     width: 300%;
     height: 300%;
-    background-image: url('http://momentsingraphics.de/Media/BlueNoise/WhiteNoiseDithering.png');
+    background-image: url('./assets/images/noise.png');
     background-repeat: repeat;
     background-size: 200px 200px;
     opacity: 0.06;
@@ -48,14 +48,9 @@ body {
 }
 
 
-.socials:hover p {
-    color: #f57f04;
-    transition-duration: 300ms;
-}
 
 .socials:hover div {
-    background-color: #000;
-    color: #f57f04;
+    background-color: #00000000;
     transition-duration: 300ms;
 }
 
@@ -64,7 +59,7 @@ body {
     inset: 0;
     pointer-events: none;
     /* background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0ibm9pc2UiPjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbCIgbnVtT2N0YXZlcz0iMTAwIiBiYXNlRnJlcXVlbmN5PSIwLjgiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IndoaXRlIiBmaWx0ZXI9InVybCgjbm9pc2UpIi8+PC9zdmc+"); */
-    background-image: url('http://momentsingraphics.de/Media/BlueNoise/WhiteNoiseDithering.png');
+    background-image: url('./assets/images/noise.png');
     background-repeat: repeat;
     background-size: 200px 200px;
     mix-blend-mode: overlay;

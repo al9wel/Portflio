@@ -4,7 +4,6 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import NavBar from "./components/NavBar";
 import Projects from "./sections/Projects";
-
 const michroma = Michroma({
   weight: ["400"],
 });
