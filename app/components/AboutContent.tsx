@@ -215,7 +215,7 @@ const AboutContent = ({ animationValues }: ComponentProps) => {
                     initial={animation.initial5}
                     whileInView={animation.whileInView5}
                     transition={{ duration: 2, ease: [0.23, 1, 0.32, 1], }}
-                    className="bg-color8 md:bg-[#b2b687] text-black/80 p-2 rounded-sm rounded-bl-[30px] relative col-span-7 md:col-span-4">
+                    className="bg-color8 md:bg-color9 text-black/80 p-2 rounded-sm rounded-bl-[30px] relative col-span-7 md:col-span-4">
                     <div className="noise opacity-30"></div>
                     <div className="flex justify-between items-center">
                         <h1 className={`uppercase ${oswald.className} tracking-widest text-4xl `}>About me</h1>
