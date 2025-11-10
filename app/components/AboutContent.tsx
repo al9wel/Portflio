@@ -44,7 +44,7 @@ const AboutContent = ({ animationValues }: ComponentProps) => {
                     initial={animation.initial1}
                     whileInView={animation.whileInView1}
                     transition={{ delay: 0.1, duration: 1.8, ease: [0.23, 1, 0.32, 1], }}
-                    className="bg-color8 h-75 sm:h-65 col-span-2 md:col-span-1 md:h-118 lg:h-82 xl:h-71  rounded-br-[30px] rounded-sm relative">
+                    className="hover:translate-y-[-6px] duration-300 bg-color8 h-75 sm:h-65 col-span-2 md:col-span-1 md:h-118 lg:h-82 xl:h-71  rounded-br-[30px] rounded-sm relative">
                     <div className="noise opacity-20"></div>
                     <Image
                         src={al9wel}
@@ -57,7 +57,7 @@ const AboutContent = ({ animationValues }: ComponentProps) => {
                     initial={animation.initial2}
                     whileInView={animation.whileInView2}
                     transition={{ duration: 2, ease: [0.23, 1, 0.32, 1], }}
-                    className="bg-color8 h-75 sm:h-65 col-span-5 md:col-span-2 md:h-118 lg:h-82 xl:h-71  rounded-tl-[30px] p-2 pr-1 text-black/80 rounded-sm relative">
+                    className="hover:translate-y-[-6px] duration-300 bg-color8 h-75 sm:h-65 col-span-5 md:col-span-2 md:h-118 lg:h-82 xl:h-71  rounded-tl-[30px] p-2 pr-1 text-black/80 rounded-sm relative">
                     <div className="noise opacity-30"></div>
                     <div className="flex justify-between items-center">
                         <h1 className={`uppercase ${oswald.className} tracking-widest text-4xl `}>Education</h1>
@@ -77,7 +77,7 @@ const AboutContent = ({ animationValues }: ComponentProps) => {
                         initial={animation.initial3}
                         whileInView={animation.whileInView3}
                         transition={{ duration: 2, ease: [0.23, 1, 0.32, 1], }}
-                        className="bg-color8 h- md:h-92 lg:h-55 xl:h-50 p-2 text-black/80 rounded-tr-[30px] rounded-sm">
+                        className="hover:translate-y-[-6px] duration-300 bg-color8 h- md:h-92 lg:h-55 xl:h-50 p-2 text-black/80 rounded-tr-[30px] rounded-sm">
                         <div className="flex justify-between items-center">
                             <h1 className={`uppercase ${oswald.className} tracking-widest text-4xl `}>Skills</h1>
                             <div className="flex xl:hidden justify-center items-center flex-col mr-6 gap-2">
@@ -215,7 +215,7 @@ const AboutContent = ({ animationValues }: ComponentProps) => {
                     initial={animation.initial5}
                     whileInView={animation.whileInView5}
                     transition={{ duration: 2, ease: [0.23, 1, 0.32, 1], }}
-                    className="bg-color8 md:bg-color9 text-black/80 p-2 rounded-sm rounded-bl-[30px] relative col-span-7 md:col-span-4">
+                    className="hover:translate-y-[-6px] duration-300 bg-color8 md:bg-color9 text-black/80 p-2 rounded-sm rounded-bl-[30px] relative col-span-7 md:col-span-4">
                     <div className="noise opacity-30"></div>
                     <div className="flex justify-between items-center">
                         <h1 className={`uppercase ${oswald.className} tracking-widest text-4xl `}>About me</h1>
@@ -231,7 +231,7 @@ const AboutContent = ({ animationValues }: ComponentProps) => {
                     initial={animation.initial6}
                     whileInView={animation.whileInView6}
                     transition={{ duration: 2, ease: [0.23, 1, 0.32, 1], }}
-                    className="bg-[#b2b687] md:bg-color8 text-black/80 h-fit p-2 rounded-sm rounded-tr-[30px] relative col-span-7 md:col-span-3">
+                    className="hover:translate-y-[-6px] duration-300 bg-[#b2b687] md:bg-color8 text-black/80 h-fit p-2 rounded-sm rounded-tr-[30px] relative col-span-7 md:col-span-3">
                     <div className="noise opacity-30"></div>
                     <h1 className={`uppercase ${oswald.className} tracking-widest text-4xl `}>Socials</h1>
                     <div className="flex flex-wrap gap-6 mt-2">
