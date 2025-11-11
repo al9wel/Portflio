@@ -1,22 +1,31 @@
 import { ArrowBigRight } from 'lucide-react'
 import { motion } from 'motion/react'
+import ProjectDetails from './ProjectDetails'
+import { useState } from 'react'
+import { StaticImageData } from 'next/image'
 type ComponentProps = {
     title: string,
     tech: React.ReactNode[],
-    color: string
+    color: string,
+    description: string
+    features: string[],
+    githup: string,
+    preview: string,
+    image: StaticImageData
 }
-const ProjectCard = ({ title, tech, color }: ComponentProps) => {
+const ProjectCard = ({ title, tech, color, description, features, githup, preview, image }: ComponentProps) => {
+    const [open, setOpen] = useState(false)
     return (
         <>
             <motion.div
-                initial={{
-                    opacity: 0,
-                    x: -40
-                }}
-                whileInView={{
-                    opacity: 1,
-                    x: 0
-                }}
+                // initial={{
+                //     opacity: 0,
+                //     x: -40
+                // }}
+                // whileInView={{
+                //     opacity: 1,
+                //     x: 0
+                // }}
                 transition={{ duration: 2, ease: [0.23, 1, 0.32, 1], }}
                 className="hover:translate-y-[-6px] duration-300 flex flex-col justify-center items-start gap-6 sm:flex-row sm:justify-between sm:items-center  py-2 px-2 bg-color8/10 rounded-sm md:px-20 text-color1">
                 <div>
@@ -62,7 +71,7 @@ const ProjectCard = ({ title, tech, color }: ComponentProps) => {
                         </p> */}
                         {tech.map((icon, index) => {
                             return (
-                                <p key={index} className="text-color9 rounded-full border border-color9 w-fit p-1">
+                                <p key={index} className="text-color9 rounded-full border border-color9 w-fit p-2">
                                     {icon}
                                 </p>
                             )
@@ -80,6 +89,7 @@ const ProjectCard = ({ title, tech, color }: ComponentProps) => {
                     }}
                     transition={{ duration: 2, ease: [0.23, 1, 0.32, 1], }}
                     whileHover="hover"
+                    onClick={() => setOpen(true)}
                     className="flex items-center justify-center gap-2 cursor-pointer "
                 >
                     <motion.div
@@ -109,6 +119,9 @@ const ProjectCard = ({ title, tech, color }: ComponentProps) => {
             </motion.div>
             <div className="relative my-6 h-[1px] w-full bg-gradient-to-r from-transparent via-gray-400 to-transparent dark:via-gray-600">
             </div>
+            {open && (
+                <ProjectDetails title={title} color={color} tech={tech} description={description} features={features} githup={githup} preview={preview} image={image} closeModal={() => setOpen(false)} />
+            )}
         </>
     )
 }

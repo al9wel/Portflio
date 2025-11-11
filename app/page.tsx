@@ -4,6 +4,7 @@ import Hero from "./sections/Hero";
 import About from "./sections/About";
 import NavBar from "./components/NavBar";
 import Projects from "./sections/Projects";
+import Connect from "./sections/Connect";
 const michroma = Michroma({
   weight: ["400"],
 });
@@ -17,6 +18,7 @@ const Home = () => {
         <Hero />
         <About />
         <Projects />
+        <Connect />
       </main>
     </>
   );
