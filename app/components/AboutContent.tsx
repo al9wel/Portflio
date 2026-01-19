@@ -1,3 +1,4 @@
+"use client";
 import { Star } from "lucide-react";
 import { motion } from "motion/react"
 import { Oswald } from "next/font/google";

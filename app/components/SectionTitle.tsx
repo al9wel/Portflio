@@ -1,3 +1,5 @@
+"use client";
+
 import { SunDim } from 'lucide-react'
 import { motion } from 'motion/react'
 import { BBH_Sans_Bartle } from 'next/font/google';

@@ -1,5 +1,5 @@
 import SectionTitle from "../components/SectionTitle";
-import { SiCss3, SiHtml5, SiI18Next, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
+import { SiClerk, SiCss3, SiHtml5, SiI18Next, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiShadcnui, SiTailwindcss, SiTwinmotion, SiTypescript, SiVite } from "react-icons/si";
 import ProjectCard from "../components/ProjectCard";
 import portflio from "../assets/images/portflio.png"
 import weather from "../assets/images/weather.png"
@@ -9,14 +9,37 @@ import tawasol from "../assets/images/tawasol.png"
 import prayer from "../assets/images/prayertimes.png"
 import xo from "../assets/images/tictactoe.png"
 import skills from "../assets/images/skills.png"
+import alkhair from "../assets/images/alkhair.png"
 const projects = [
+    {
+        id: -1,
+        title: "Alkhair System",
+        tech: [
+            <SiNextdotjs key={1} className="size-6 sm:size-7" />,
+            <SiShadcnui key={3} className="size-6 sm:size-7" />,
+            <SiClerk key={2} className="size-6 sm:size-7" />,
+            <SiRedux key={3} className="size-6 sm:size-7" />,
+        ],
+        description: `A modern retail management dashboard built with Next.js.
+        It provides tools for sales, expenses, debts...etc tracking with role-based access control and a clean, scalable UI.`,
+        features: [
+            "Sales, expenses, debts,customers,employee,reports,products management",
+            "Role-based authentication and authorization",
+            "Real-time calculations and data handling",
+            "Clean and scalable dashboard UI using shadcn/ui",
+        ],
+        color: "bg-cyan-800/40",
+        githup: "https://github.com/al9wel/alkhair",
+        preview: "https://al9wel-8.vercel.app/",
+        image: alkhair
+    },
     {
         id: 0,
         title: "Portflio",
         tech: [
-            <SiNextdotjs key={1} size={30} />,
-            <SiTypescript key={2} size={30} />,
-            <SiTailwindcss key={3} size={30} />,
+            <SiNextdotjs key={1} className="size-6 sm:size-7" />,
+            <SiTypescript key={2} className="size-6 sm:size-7" />,
+            <SiTailwindcss key={3} className="size-6 sm:size-7" />,
         ],
         description: `A modern and minimal portfolio website built using Next.js, Tailwind CSS, and Framer Motion.
         Designed to showcase creative work with smooth animations, responsive layouts, and clean design principles`,
@@ -27,17 +50,17 @@ const projects = [
         ],
         color: "bg-pink-800/40",
         githup: "https://github.com/al9wel/Portflio",
-        preview: "https://al9wel.netlify.app/",
+        preview: "https://al9wel.vercel.app/",
         image: portflio
     },
     {
         id: 1,
         title: "Weather App",
         tech: [
-            <SiReact key={1} size={30} />,
-            <SiRedux key={2} size={30} />,
-            <SiTailwindcss key={3} size={30} />,
-            <SiI18Next key={1} size={30} />,
+            <SiReact key={1} className="size-6 sm:size-7" />,
+            <SiRedux key={2} className="size-6 sm:size-7" />,
+            <SiTailwindcss key={3} className="size-6 sm:size-7" />,
+            <SiI18Next key={1} className="size-6 sm:size-7" />,
         ],
         description: `A simple and responsive Weather Application built using React, Vite, Redux Toolkit, and Tailwind CSS, leveraging the OpenWeather API.
 Users can search for any city and instantly get current weather data, with language support in English and Arabic via i18next (i18n).`,
@@ -48,16 +71,16 @@ Users can search for any city and instantly get current weather data, with langu
         ],
         color: "bg-green-800/40",
         githup: "https://github.com/al9wel/WeatherApp",
-        preview: "https://al9wel-9.netlify.app/",
+        preview: "https://al9wel-7.vercel.app/",
         image: weather
     },
     {
         id: 2,
         title: "Animated Page",
         tech: [
-            <SiReact key={1} size={30} />,
-            <SiVite key={2} size={30} />,
-            <SiTailwindcss key={3} size={30} />,
+            <SiReact key={1} className="size-6 sm:size-7" />,
+            <SiVite key={2} className="size-6 sm:size-7" />,
+            <SiTailwindcss key={3} className="size-6 sm:size-7" />,
         ],
         description: `A creative and minimal React website built to learn and experiment with animations and modern styling.
 The project includes two sections — Home and About — where different animation techniques are applied using Framer Motion , Tailwind CSS and Third-Party Libraries`,
@@ -68,16 +91,16 @@ The project includes two sections — Home and About — where different animati
         ],
         color: "bg-blue-800/40",
         githup: "https://github.com/al9wel/Animated-Landing-Page",
-        preview: "https://al9wel-10.netlify.app/",
+        preview: "https://al9wel-6.vercel.app/",
         image: animated
     },
     {
         id: 3,
         title: "TodoList",
         tech: [
-            <SiReact key={1} size={30} />,
-            <SiVite key={2} size={30} />,
-            <SiTailwindcss key={3} size={30} />,
+            <SiReact key={1} className="size-6 sm:size-7" />,
+            <SiVite key={2} className="size-6 sm:size-7" />,
+            <SiTailwindcss key={3} className="size-6 sm:size-7" />,
         ],
         description: `A simple and elegant To-Do List application built with React, powered by Vite for lightning-fast development, and styled using Tailwind CSS.
 This project helps users organize their daily tasks efficiently and sort the task with a clean and responsive interface`,
@@ -88,16 +111,16 @@ This project helps users organize their daily tasks efficiently and sort the tas
         ],
         color: "bg-red-800/40",
         githup: "https://github.com/al9wel/React-To-Do-List",
-        preview: "https://al9wel-7.netlify.app/",
+        preview: "https://al9wel-5.vercel.app/",
         image: todolist
     },
     {
         id: 4,
         title: "Tawasol Media",
         tech: [
-            <SiHtml5 key={2} size={30} />,
-            <SiJavascript key={1} size={30} />,
-            <SiTailwindcss key={3} size={30} />,
+            <SiHtml5 key={2} className="size-6 sm:size-7" />,
+            <SiJavascript key={1} className="size-6 sm:size-7" />,
+            <SiTailwindcss key={3} className="size-6 sm:size-7" />,
         ],
         description: `Tawasol is a simple and interactive social media web application.
 The app allows users to create accounts, log in, post content, view others’ posts, and interact with a dynamic feed — all through live API integration.`,
@@ -108,16 +131,16 @@ The app allows users to create accounts, log in, post content, view others’ po
         ],
         color: "bg-cyan-800/40",
         githup: "https://github.com/al9wel/Tawasol",
-        preview: "https://al9wel-6.netlify.app/",
+        preview: "https://al9wel-4.vercel.app/",
         image: tawasol
     },
     {
         id: 5,
         title: "Prayer Times",
         tech: [
-            <SiHtml5 key={2} size={30} />,
-            <SiCss3 key={3} size={30} />,
-            <SiJavascript key={1} size={30} />,
+            <SiHtml5 key={2} className="size-6 sm:size-7" />,
+            <SiCss3 key={3} className="size-6 sm:size-7" />,
+            <SiJavascript key={1} className="size-6 sm:size-7" />,
         ],
         description: `A simple and modern Prayer Times Web App that displays accurate daily prayer times for all Yemeni governorates using a public Prayer Times API.
 The project focuses on simplicity, accuracy, and responsiveness — making it easy for users across Yemen to view local prayer times.`,
@@ -128,16 +151,16 @@ The project focuses on simplicity, accuracy, and responsiveness — making it ea
         ],
         color: "bg-indigo-800/40",
         githup: "https://github.com/al9wel/Parayer-Times",
-        preview: "https://al9wel-5.netlify.app/",
+        preview: "https://al9wel-3.vercel.app/",
         image: prayer
     },
     {
         id: 6,
         title: "X-O Game",
         tech: [
-            <SiHtml5 key={2} size={30} />,
-            <SiCss3 key={3} size={30} />,
-            <SiJavascript key={1} size={30} />,
+            <SiHtml5 key={2} className="size-6 sm:size-7" />,
+            <SiCss3 key={3} className="size-6 sm:size-7" />,
+            <SiJavascript key={1} className="size-6 sm:size-7" />,
         ],
         description: `A modern and fun Tic Tac Toe Game built with HTML, CSS, and JavaScript.
 This project supports both Single Player (vs Computer) and Two Player modes, providing an enjoyable and responsive gaming experience right in your browser.`,
@@ -148,15 +171,15 @@ This project supports both Single Player (vs Computer) and Two Player modes, pro
         ],
         color: "bg-pink-800/40",
         githup: "https://github.com/al9wel/TIC-TAC-TOE",
-        preview: "https://al9wel-4.netlify.app/",
+        preview: "https://al9wel-2.vercel.app/",
         image: xo
     },
     {
         id: 7,
         title: "Skills Landing Page",
         tech: [
-            <SiHtml5 key={2} size={30} />,
-            <SiCss3 key={3} size={30} />,
+            <SiHtml5 key={2} className="size-6 sm:size-7" />,
+            <SiCss3 key={3} className="size-6 sm:size-7" />,
         ],
         description: `A clean and responsive landing page built using HTML and CSS to demonstrate front-end design and layout skills.
 This project focuses on creating a modern, visually appealing webpage that adapts to different screen sizes and highlights the power of CSS styling.`,
@@ -167,11 +190,9 @@ This project focuses on creating a modern, visually appealing webpage that adapt
         ],
         color: "bg-purple-800/40",
         githup: "https://github.com/al9wel/Skills",
-        preview: "https://al9wel-1.netlify.app/",
+        preview: "https://al9wel-1.vercel.app/",
         image: skills
     },
-
-
 ]
 const Projects = () => {
     return (

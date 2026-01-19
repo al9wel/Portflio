@@ -1,4 +1,4 @@
-"use client"
+
 import { Michroma } from "next/font/google";
 import Hero from "./sections/Hero";
 import About from "./sections/About";

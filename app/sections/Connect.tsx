@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react'
 import SectionTitle from '../components/SectionTitle'
 import emailjs from '@emailjs/browser'
