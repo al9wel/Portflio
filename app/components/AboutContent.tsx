@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import { Oswald } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import al9wel from "../assets/images/al9wel.jpeg"
+import al9wel from "../assets/images/al9wel.png"
 import { SiExpress, SiFlutter, SiGit, SiGithub, SiGmail, SiJavascript, SiLaravel, SiLinkedin, SiMongodb, SiNextdotjs, SiNodedotjs, SiReact, SiRedux, SiTailwindcss, SiTypescript, SiWhatsapp, } from "react-icons/si";
 import LogoLoop from "./LogoLoop"
 const oswald = Oswald({
@@ -51,7 +51,7 @@ const AboutContent = ({ animationValues }: ComponentProps) => {
                         src={al9wel}
                         alt="al9wel"
                         fill
-                        className=" object-cover object-center scale-98 grayscale-90 hover:grayscale-60 duration-300 cursor-crosshair rounded-br-[120px]"
+                        className=" object-cover object-top scale-98 grayscale-90 hover:grayscale-60 duration-300 cursor-crosshair rounded-br-[120px]"
                     />
                 </motion.div>
                 <motion.div

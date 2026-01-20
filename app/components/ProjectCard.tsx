@@ -127,7 +127,7 @@ const ProjectCard = ({ title, tech, color, description, features, githup, previe
                         transition={{ duration: 2, ease: [0.23, 1, 0.32, 1], }}
                         whileHover="hover"
                         // onClick={() => setOpen(true)}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-2 cursor-pointer "
+                        className="flex  -mt-7 sm:-mt-0 flex-col sm:flex-row items-center justify-center gap-2 cursor-pointer "
                     >
                         <Link href={githup} className="bg-color8/70 text-black/70 hover:bg-color2 p-[2px] hover:scale-95 p-[2px] rounded-md duration-300 socials flex justify-center items-center gap-2 ">
                             <div className="p-[3px] rounded-md"><SiGithub size={20} /></div>
