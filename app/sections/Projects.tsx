@@ -32,7 +32,7 @@ import hadramedia from "../assets/images/hadramedia.jpg";
 const projects = [
   {
     id: 0,
-    title: "Digital Archive & Taxpayer Services",
+    title: "Files Archive & Tax Services",
     tech: [
       <SiReact key={1} className="size-6 sm:size-7" />,
       <SiVite key={2} className="size-6 sm:size-7" />,
@@ -48,7 +48,7 @@ const projects = [
       "Modern UI/UX – Shadcn UI, Tailwind CSS, responsive design, loading skeletons, error boundaries.",
     ],
     color: "bg-amber-800/40",
-    githup: "#",
+    githup: "https://github.com/al9wel/File-Archiving-and-Taxpayer-Services-System",
     preview: "https://file-archiving-and-taxpayer-service.vercel.app",
     image: files,
   },
@@ -111,7 +111,7 @@ const projects = [
       "Clean modern interface design",
     ],
     color: "bg-slate-800/40",
-    githup: "#",
+    githup: "https://github.com/al9wel/Hadramedia",
     preview: "https://hadramedia.vercel.app",
     image: hadramedia,
   },
