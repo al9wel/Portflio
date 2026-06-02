@@ -256,9 +256,9 @@ const AboutContent = ({ animationValues }: ComponentProps) => {
                                 <p>Linked in</p>
                             </Link>
                         </div>
-                        <Link href={"/cv.pdf"} className="bg-black/80  justify-center items-center mt-0 md:mt-2 lg:self-start hidden sm:flex  rounded-md p-2 text-color8 hover:text-white cursor-pointer hover:bg-black/90 duration-300">Downlad CV</Link>
+                        <Link href={"/CV.pdf"} className="bg-black/80  justify-center items-center mt-0 md:mt-2 lg:self-start hidden sm:flex  rounded-md p-2 text-color8 hover:text-white cursor-pointer hover:bg-black/90 duration-300">Downlad CV</Link>
                     </div>
-                    <Link href={"/cv.pdf"} className="bg-black/80  justify-center items-center mt-4 md:mt-2 lg:self-start flex sm:hidden w-fit  rounded-md p-2 text-color8 hover:text-white cursor-pointer hover:bg-black/90 duration-300">Downlad CV</Link>
+                    <Link href={"/CV.pdf"} className="bg-black/80  justify-center items-center mt-4 md:mt-2 lg:self-start flex sm:hidden w-fit  rounded-md p-2 text-color8 hover:text-white cursor-pointer hover:bg-black/90 duration-300">Downlad CV</Link>
                     <div className="flex justify-end items-end gap-2">
                         <div className="rounded-full w-3 h-3 border-2 border-black/70"></div>
                         <div className="rounded-full w-3 h-3 bg-black/70"></div>
