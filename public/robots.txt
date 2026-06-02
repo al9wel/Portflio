@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://al9wel.netlify.app/sitemap.xml
