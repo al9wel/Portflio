@@ -1,49 +1,96 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AL9WEL | Frontend Developer",
+  metadataBase: new URL("https://al9wel.netlify.app"),
+
+  title: {
+    default: "Salem Ahmed Alswil | Frontend Developer",
+    template: "%s | Salem Ahmed Alswil",
+  },
+
   description:
-    "AL9WEL is a creative Frontend Developer specializing in modern web experiences using React and Next.js. Explore my latest projects.",
+    "Salem Ahmed Alswil (AL9WEL) is a Frontend Developer from Yemen specializing in React, Next.js, TypeScript, Tailwind CSS, and modern web applications.",
+
   keywords: [
+    "Salem Ahmed Alswil",
+    "Salem Alswil",
+    "Salem Ahmed",
+    "سالم احمد الصويل",
+    "سالم الصويل",
+    "سالم احمد",
+    "AL9WEL",
+    "al9wel",
     "Frontend Developer",
+    "Frontend Developer Yemen",
+    "React Developer",
+    "React Developer Yemen",
+    "Next.js Developer",
+    "TypeScript Developer",
+    "JavaScript Developer",
+    "Web Developer",
+    "Software Engineer",
+    "Portfolio",
     "React",
     "Next.js",
-    "Portfolio",
-    "Web Developer",
     "Tailwind CSS",
   ],
+
   authors: [
-    { name: "AL9WEL", url: "https://al9wel.netlify.app/" },
+    {
+      name: "Salem Ahmed Alswil",
+      url: "https://al9wel.netlify.app",
+    },
   ],
+
+  creator: "Salem Ahmed Alswil",
+  publisher: "Salem Ahmed Alswil",
+
+  alternates: {
+    canonical: "https://al9wel.netlify.app",
+  },
+
   openGraph: {
-    title: "A9 | Frontend Developer Portfolio",
+    title: "Salem Ahmed Alswil | Frontend Developer",
     description:
-      "Explore AL9WEL creative portfolio — modern React & Next.js projects with animation, design, and performance in mind.",
-    url: "https://al9wel.netlify.app/",
-    siteName: "AL9WEL",
+      "Frontend Developer specializing in React, Next.js, TypeScript and modern web applications.",
+
+    url: "https://al9wel.netlify.app",
+    siteName: "Salem Ahmed Alswil Portfolio",
+
     images: [
       {
         url: "/portflio.png",
         width: 1200,
         height: 630,
-        alt: "AL9WEL Portfolio Preview",
+        alt: "Salem Ahmed Alswil Portfolio",
       },
     ],
+
     locale: "en_US",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "AL9WEL | Frontend Developer",
+    title: "Salem Ahmed Alswil | Frontend Developer",
     description:
-      "Modern web experiences built with React, Next.js, and creative animation.",
+      "Frontend Developer specializing in React, Next.js, TypeScript and modern web applications.",
     creator: "@al9wel1",
     images: ["/portflio.png"],
   },
-  metadataBase: new URL("https://al9wel.netlify.app/"),
-  alternates: {
-    canonical: "https://al9wel.netlify.app/",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
+
   icons: {
     icon: "/favicon.ico",
     apple: "/favicon.ico",
